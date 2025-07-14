@@ -837,7 +837,7 @@ select:focus, input:focus {
     </div>
     <script>
 // Base URL for API
-const API_BASE_URL = 'http://localhost:3000/api';
+const API_BASE_URL = 'http://3.87.225.158:3066/api';
 
 // Initialize global variables
 let requests = [];
@@ -1277,7 +1277,7 @@ function showNotification(options) {
         options = { message: options, type: 'success' };
     }
 
-    const { title, message, type = 'success', duration = 3000 } = options;
+    const { title, message, type = 'success', duration = 3066 } = options;
 
     let container = document.querySelector('.premium-notification-container');
     if (!container) {
