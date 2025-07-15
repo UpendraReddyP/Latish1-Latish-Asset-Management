@@ -6,10 +6,10 @@ services:
     container_name: asset_postgres
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin834
+      POSTGRES_PASSWORD: admin123
       POSTGRES_DB: asset_management
     ports:
-      - "5464:5432"
+      - "5097:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -21,18 +21,18 @@ services:
       - postgres
     environment:
       PGUSER: postgres
-      PGPASSWORD: admin834
+      PGPASSWORD: admin123
       PGDATABASE: asset_management
       PGHOST: postgres
       PGPORT: 5432
     ports:
-      - "3066:3066"
+      - "3097:3097"
 
   employee-asset:
     build: ./Employee-Asset
     container_name: asset_employee_ui
     ports:
-      - "8081:80"
+      - "8162:80"
     depends_on:
       - backend
 
@@ -40,7 +40,7 @@ services:
     build: ./HR-Asset
     container_name: asset_hr_ui
     ports:
-      - "8082:80"
+      - "8163:80"
     depends_on:
       - backend
 
